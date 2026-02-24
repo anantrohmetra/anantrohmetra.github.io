@@ -70,9 +70,13 @@
 
     .header-image {
       flex-shrink: 0;
-      width: 220px;
-      height: auto;
+      width: 192px;
+      align-self: stretch;
+      object-fit: contain;
+      object-position: top right;
       border-radius: 4px;
+      filter: invert(1);
+      opacity: 0.8;
     }
 
     h1 {
@@ -137,6 +141,22 @@
       color: var(--accent);
       padding-bottom: 16px;
       border-bottom: 1px solid var(--border);
+    }
+
+    /* Press image */
+    .press-image-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 0;
+    }
+    .press-image {
+      width: 100%;
+      max-height: 320px;
+      object-fit: contain;
+      filter: invert(1);
+      opacity: 0.7;
+      display: block;
+      margin: 0 auto;
     }
 
     /* Projects */
@@ -256,6 +276,8 @@
           <h1>Anant Rohmetra</h2>
           <p>Research assistant at the (Art)Science Lab, Srishti Manipal University and The Indian Sonic Research Organisation. Working at the intersection of multimedia arts and technology — collaborating with designers, multimedia artists and engineers through open-community labs with emphasis on DIY approach and open-source technology to decentralize creative tools.</p>
       </div>
+      <img src="Press-Image.png" alt="Anant Rohmetra" class="header-image">
+    </div>
     </div>
   </header>
 
