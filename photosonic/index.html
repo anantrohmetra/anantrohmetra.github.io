@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing Sonification Platform</title>
+  
+  <!-- p5.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+  
+  <!-- Tone.js library for audio synthesis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #0a0a0f;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    h1 {
+      margin: 0 0 10px 0;
+      font-size: 32px;
+      background: linear-gradient(45deg, #ff6496, #64b5f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      color: #888;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    
+    main {
+      background: #1a1a2e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    canvas {
+      border: 2px solid #333;
+      border-radius: 5px;
+      cursor: crosshair;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    select {
+      background: #2a2a3e;
+      color: white;
+      border: 1px solid #444;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    input[type="range"] {
+      width: 100px;
+      cursor: pointer;
+    }
+    
+    input[type="color"] {
+      width: 50px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    p {
+      margin: 5px 0;
+    }
+    
+    .info-box {
+      background: #16213e;
+      border-left: 4px solid #667eea;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      max-width: 800px;
+    }
+    
+    .info-box h3 {
+      margin-top: 0;
+      color: #667eea;
+    }
+    
+    .info-box ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    
+    .info-box li {
+      margin: 5px 0;
+      color: #aaa;
+    }
+    
+    .keyboard-shortcuts {
+      background: #1a1a2e;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #888;
+    }
+    
+    .keyboard-shortcuts kbd {
+      background: #2a2a3e;
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid #444;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Drawing Sonification Platform</h1>
+  <p class="subtitle">Inspired by the ANS Synthesizer, Oramics, and Kandinsky's Synesthesia</p>
+  
+  <main>
+    <!-- Canvas will be created here by p5.js -->
+  </main>
+  
+  <div class="info-box">
+    <h3>How It Works</h3>
+    <ul>
+      <li><strong>Spatial (ANS) Mode:</strong> Vertical position determines pitch (higher = higher pitch). Inspired by the Soviet ANS synthesizer that read drawings as sound.</li>
+      <li><strong>Kandinsky Mode:</strong> Colors determine timbre - reds are harsh sawtooth waves, blues are smooth sine waves, greens are square waves.</li>
+      <li><strong>Gestural Mode:</strong> Your drawing gesture becomes a melody - plays back your strokes as musical sequences.</li>
+    </ul>
+    
+    <div class="keyboard-shortcuts">
+      <strong>Keyboard Shortcuts:</strong> 
+      <kbd>Space</kbd> Toggle scanning | 
+      <kbd>C</kbd> Clear canvas | 
+      <kbd>1-5</kbd> Quick color selection
+    </div>
+  </div>
+  
+  <!-- Load the sketch -->
+  <script src="drawing_sonification.js"></script>
+</body>
+</html>
