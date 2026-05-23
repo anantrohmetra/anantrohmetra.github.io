@@ -211,5 +211,19 @@ footer {
   .container { padding: 0 20px; }
   .header-content { flex-direction: column; gap: 20px; }
   .header-image { width: 110px; }
-  .gallery { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; max-width: 100%; }
+
+  .page-header { padding: 20px 0 16px; }
+  .back-link { margin-bottom: 18px; }
+
+  .project-body { padding: 24px 0; }
+  .project-body p { font-size: 0.86rem; max-width: 100%; }
+
+  .video-wrap { max-width: 100% !important; }
+
+  .subsection { margin-top: 20px; padding-top: 16px; }
+
+  .links a { margin-right: 14px; font-size: 0.82rem; }
+
+  audio { width: 100%; }
 }
