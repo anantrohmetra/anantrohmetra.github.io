@@ -1,4 +1,5 @@
 .DS_Store
+._*
 DOCUMENTS_OFFLINE/
 H/
 Paintings/
@@ -10,3 +11,15 @@ bg-boids-dark.png
 bg-boids-dark-2.png
 hello-world/Cool-Reddit-p5.mp4
 download (1).png
+
+# Personal documents in media/
+media/*.pdf
+media/*.docx
+media/*.HEIC
+media/*.MOV
+media/*.zip
+media/download*
+media/bg-boids-dark.png
+media/bg-boids-dark-2.png
+media/index.html
+media/portfolio.html
