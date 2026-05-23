@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offloading Faust on ESP32 LyraT Mini v1.2 — Anant Rohmetra</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="page-header">
+      <a href="../index.html" class="back-link">&larr; Anant Rohmetra</a>
+      <div class="project-meta">Research &amp; Development &mdash; 06</div>
+      <h1 class="project-title">Offloading Faust on ESP32 LyraT Mini v1.2</h1>
+    </div>
+
+    <div class="project-body">
+      <p>This project began while exploring how to offload various sound libraries onto the LyraT Mini v1.2 board. Integrating Faust DSP was particularly challenging, as the official Faust repository currently supports only the WM8978 audio codec, while the LyraT Mini relies on the ES8311. To address this limitation, I wrote ES8311 codec support and adapted the faust2esp32 generated files to function seamlessly on the LyraT board.</p>
+      <p>The Faust-generated DSP code was adapted for the ESP32 LyraT Mini v1.2 by updating deprecated FreeRTOS APIs, increasing stack size, enabling PSRAM for large DSP structures, and enabling C++ exceptions. Additional fixes included resolving macro conflicts, adding correct I2S pin mappings, and updating the audio HAL to match recent ESP-ADF changes. The codebase was reorganized into ESP-IDF components, resulting in a working Faust DSP engine on the LyraT Mini.</p>
+
+      <div class="links">
+        <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Faust-%3EESP32-Lyra-t-mini-V-1.2" target="_blank">Codec, Audio &amp; More &uarr;</a>
+      </div>
+
+      <p class="credit">Code: Anant Rohmetra</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <a href="../index.html" class="back-link">&larr; Back</a>
+    </div>
+  </footer>
+
+</body>
+</html>

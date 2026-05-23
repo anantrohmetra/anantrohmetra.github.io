@@ -3,268 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anant Rohmetra — Portfolio</title>
+  <title>Anant Rohmetra</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg: #0a0a0a;
-      --surface: #141414;
-      --border: #222;
-      --text: #e0e0e0;
-      --text-muted: #888;
-      --accent: #c8ff00;
-      --accent-dim: #c8ff0020;
+    html, body {
+      height: 100%;
+      overflow: hidden;
     }
 
     body {
-      font-family: 'IBM Plex Mono', monospace;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    a:hover { opacity: 0.7; }
-
-    /* Header */
     header {
-      padding: 80px 0 60px;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('media/bg-boids-white.png') center / cover no-repeat;
-      opacity: 0.04;
-      filter: invert(1);
-      pointer-events: none;
-    }
-    header > * { position: relative; }
-
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .header-text {
-      flex: 1;
-    }
-
-    .header-image {
       flex-shrink: 0;
-      width: 192px;
-      align-self: stretch;
-      object-fit: contain;
-      object-position: top right;
-      border-radius: 4px;
-      filter: invert(1);
-      mix-blend-mode: screen;
+      padding: 32px 0 22px;
     }
 
-    h1 {
-      font-family: 'Space Mono', monospace;
-      font-size: 2.4rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 24px;
-    }
+    .container      { max-width: 1300px; padding: 0 64px; }
+    h1              { font-size: 1.8rem; margin-bottom: 14px; }
+    header p        { font-size: 1.06rem; max-width: 760px; }
+    .header-image   { width: 120px; clip-path: inset(0 0 10% 0); }
+    .header-content { gap: 56px; align-items: center; }
 
-    header p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 680px;
-      line-height: 1.8;
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      background: rgba(10, 10, 10, 0.9);
-    }
-
-    nav .container {
+    /* ── Category columns ─────────────────────────── */
+    .categories {
+      flex: 1;
       display: flex;
-      gap: 8px;
-      padding-top: 12px;
-      padding-bottom: 12px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    nav .container::-webkit-scrollbar { display: none; }
-
-    nav a {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    nav a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-      opacity: 1;
+      border-top: 1px solid #ccc;
+      min-height: 0;
     }
 
-    /* Section headings */
-    .section-heading {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent);
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* Press image */
-    .press-image-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 0;
-    }
-    .press-image {
-      width: 100%;
-      max-height: 320px;
-      object-fit: contain;
-      filter: invert(1);
-      opacity: 0.7;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Projects */
-    .projects { padding: 60px 0; }
-
-    .project {
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .project:last-child { border-bottom: none; }
-
-    .project-number {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .project h2 {
-      font-family: 'Space Mono', monospace;
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -0.5px;
-    }
-
-    .project p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-
-    .links {
+    .category {
+      flex: 1;
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 24px;
-    }
-
-    .links a {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      padding: 8px 14px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--text);
-      transition: all 0.2s;
-    }
-    .links a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-dim);
-      opacity: 1;
-    }
-
-    .credit {
-      margin-top: 20px;
-      font-size: 0.8rem;
-      color: #555;
-      font-style: italic;
-    }
-
-    /* Image gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .gallery > * {
+      flex-direction: column;
+      border-right: 1px solid #e0dbd4;
+      min-width: 0;
       overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #444;
-      font-family: 'Space Mono', monospace;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      h1 { font-size: 1.6rem; }
-      .project h2 { font-size: 1.1rem; }
-      header { padding: 48px 0 36px; }
-      .header-content {
-        flex-direction: column;
-        gap: 24px;
-      }
-      .header-image {
-        width: 180px;
-      }
-      .gallery {
-        grid-template-columns: 1fr;
-      }
+    .category:last-child { border-right: none; }
+
+    .cat-label {
+      font-size: 1.0rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #444;
+      padding: 17px 18px 14px;
+      flex-shrink: 0;
+      border-bottom: 1px solid #e0dbd4;
+      position: relative;
+      z-index: 1;
     }
+
+    .cat-content {
+      padding: 14px 18px 21px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-links a     { font-size: 1.12rem; line-height: 1.8; display: block; }
+    .nav-sub         { margin-bottom: 5px; }
+    .nav-sub-label   { font-size: 0.88rem; color: #666; letter-spacing: 0.5px; margin-top: 12px; margin-bottom: 3px; }
+    .nav-sub > .nav-links a { font-size: 1.03rem; }
   </style>
 </head>
 <body>
@@ -272,192 +76,189 @@
   <header>
     <div class="container">
       <div class="header-content">
+        <img src="media/Press-Image.png" alt="Anant Rohmetra" class="header-image">
         <div class="header-text">
-          <h1>Anant Rohmetra</h2>
-          <p>Research assistant at The Indian Sonic Research Organisation and the Srishti Manipal University (Art)Science Lab. Practice combines multimedia arts and technology and collaborations with designers, multimedia artists and engineers through open-community labs with an emphasis on DIY approach and open-source technology to decentralize creative tools.</p>
+          <p><strong>Anant Rohmetra</strong> is a sound artist and creative technologist. His interests lie in spatial audio, DIY interfaces and Acoustics.</p>
+          <p style="margin-top:10px; font-size:0.95rem;">
+            <a href="mailto:anantrohmetra@proton.me">anantrohmetra@proton.me</a> &nbsp;&middot;&nbsp;
+            <a href="https://www.instagram.com/a._.roh/" target="_blank">Instagram</a> &nbsp;&middot;&nbsp;
+            <a href="https://www.linkedin.com/in/anantrohemtra/" target="_blank">LinkedIn</a> &nbsp;&middot;&nbsp;
+            <a href="tel:+919596322003">+91 95963 22003</a>
+          </p>
+        </div>
       </div>
-      <img src="media/Press-Image.png" alt="Anant Rohmetra" class="header-image">
-    </div>
     </div>
   </header>
 
-  <nav>
-    <div class="container">
-      <a href="#compositions">Compositions</a>
-      <a href="#visuals">Visuals</a>
-      <a href="#research">Research & Development</a>
-      </div>
-  </nav>
+  <div class="categories">
 
-  <!-- ==================== COMPOSITIONS ==================== -->
-  <section class="projects" id="compositions">
-    <div class="container">
-      <h2 class="section-heading">Compositions</h2>
-
-      <!-- 1 -->
-      <div class="project" id="spatial-audio">
-        <span class="project-number">01</span>
-        <h2>8-Channel Spatial Audio Composition</h2>
-        <p>The project began with setting up eightihspeakers and optimizing their placement for the room. I wanted to experience a composition for eight loudspeakers for the first time, so I created a piece in Max/MSP. It also turned into an opportunity to move away from visual cues in performance and to explore the principles of acousmatics. The composition is intentionally not given a title.</p>
-        <p>The listeners were encouraged to move freely through the space and walk around. From a compositional standpoint, it used Hindustani classical scales such as Raga Bhairav, along with field recordings and a no-input mixer. Using Raga Bhairav in an acousmatic composition deliberately removes the performer's body, hand gestures and visual cues that are normally central to Hindustani music. It shows how Indian sound practices can evolve into multi-channel, immersive formats, independent of Western electroacoustic lineage in terms of scales and instrumentation.</p>
-        <div class="links">
-          <a href="https://on.soundcloud.com/AahEZNMaHQhgzmp0AR" target="_blank">2-Channel Mixdown ↗</a>
-          <a href="https://drive.proton.me/urls/AAFYC32V08#2Fspm1YkwSRa" target="_blank">8-Ch & 2-Ch Download ↗</a>
+    <div class="category">
+      <div class="cat-label">Digital Interfaces</div>
+      <div class="cat-content">
+        <div class="nav-sub">
+          <div class="nav-sub-label">digital instruments</div>
+          <div class="nav-links">
+            <a href="projects/leap-motion.html">Leap Motion</a>
+            <a href="projects/pseudo-theremin.html">Pseudo Theremin</a>
+            <a href="projects/synthesizer.html">Standalone Synthesizer</a>
+            <a href="projects/diy-instruments.html#guitar-pedal">Guitar Pedal</a>
+          </div>
         </div>
-        <p class="credit">Composition: Anant Rohmetra</p>
-      </div>
-
-      <!-- 2 -->
-      <div class="project" id="leap-motion">
-        <span class="project-number">02</span>
-        <h2>Leap Motion Instrument</h2>
-        <p>Leap Motion tracks hand and finger movements in 3D space using infrared cameras and LEDs. It is used to make a non-contact instrument that reads hands' tilt, distance, X–Y position, and grab strength and generates data accordingly which changes timbre, pitch and trigger sounds. This is done by using the input data from the device to change parameters in MAX/MSP using OSC protocol. The project uses Wekinator, an open-source machine learning tool to train the synthesizer to respond in specific ways at particular positions. The software is further used to recognize gestures such as drawing a circle or a triangle, which are then used to trigger samples.</p>
-        <p>The instrument was showcased live at the Middle Room, Bangalore and the audience enjoyed interacting with the instrument. It was performed on four loudspeakers. The sound output was spatially directed based on the performer's hand position along the X and Z axes.</p>
-        <div class="links">
-          <a href="https://youtu.be/sOYI8PO1Ckc" target="_blank">Showcase at Middle Room ↗</a>
-          <a href="https://youtu.be/jXTPndz2P34" target="_blank">Closer Look ↗</a>
-          <a href="https://drive.proton.me/urls/Y2MKJ24M74#vvFQYWOY5wft" target="_blank">Download ↗</a>
+        <div class="nav-sub">
+          <div class="nav-sub-label">analog synthesizers</div>
+          <div class="nav-links">
+            <a href="projects/diy-instruments.html#composition">Composition</a>
+            <a href="projects/diy-instruments.html#weird-sound-generator">Weird Sound Generator</a>
+            <a href="projects/diy-instruments.html#noise-cluster">Noise Cluster</a>
+            <a href="projects/diy-instruments.html#pamscilator">PAMSCILATOR</a>
+            <a href="projects/diy-instruments.html#sparkfunk">SparkFunk / Dancing Girl</a>
+            <a href="projects/diy-instruments.html#schmitt-trigger">Schmitt Trigger</a>
+          </div>
         </div>
-        <p class="credit">Performer and programmer: Anant Rohmetra</p>
       </div>
-
     </div>
-  </section>
 
-  <!-- ==================== VISUALS ==================== -->
-  <section class="projects" id="visuals">
-    <div class="container">
-      <h2 class="section-heading">Visuals</h2>
-
-      <!-- 3 -->
-      <div class="project" id="monochromatic-visuals">
-        <span class="project-number">03</span>
-        <h2>Monochromatic Visuals</h2>
-        <p>Projected visuals for a noise gig performed using no-input DIY instruments and feedback. The visual is built with P5.js and uses boids-based particle movement driven by real-time audio input. Microphone input is split into logarithmic frequency bands — bass scales the radius and overall size, low-mid adds slow rotation and drift, while mid and high frequencies add deterministic jitter and affect connection distance and line opacity.</p>
-        <p>Thousands of nodes are laid out in concentric layers using the golden angle for even angular spacing and connect by proximity to form geometric meshes. The boid-like behaviour creates organic, flocking motion that reacts to the intensity and texture of the sound. The result is a monochrome, mathematically driven visual that responds in real time to the noise performance.</p>
-        <div class="gallery">
-          <div><img src="media/anant-noisy-kid-1771448218396-b.png" alt="Visualiser output — boid lines on dark background"></div>
-          <div><img src="media/anant-noisy-kid-1771448218396-d.png" alt="Visualiser output — dense boid cluster on light background"></div>
-          <div><img src="media/anant-noisy-kid-1771448218396-e.png" alt="Visualiser output — boid pattern"></div>
-          <div><img src="media/anant-noisy-kid-1771448218396.png" alt="Visualiser output — boid nodes with trails"></div>
+    <div class="category">
+      <div class="cat-label">Compositions</div>
+      <div class="cat-content">
+        <div class="nav-links">
+          <a href="projects/metamorphosis.html">Metamorphosis</a>
+          <a href="projects/monochromatic-visuals.html">Monochromatic Visuals</a>
+          <a href="projects/vinyl-record.html">New Ecology: Animal Society VA Vinyl</a>
+          <a href="projects/kala.html">Livecode.blr</a>
+          <a href="projects/kochi-biennale.html">Hack4Play Kochi Biennale</a>
         </div>
-        <div class="links">
-          <a href="Kala/Anant-Noisy-Kid/index.html" target="_blank">Launch Visual ↗</a>
-        </div>
-        <p class="credit">Concept and code: Anant Rohmetra</p>
       </div>
-
     </div>
-  </section>
 
-  <!-- ==================== RESEARCH & DEVELOPMENT ==================== -->
-  <section class="projects" id="research">
-    <div class="container">
-      <h2 class="section-heading">Research & Development</h2>
-
-      <!-- 4 -->
-      <div class="project" id="pseudo-theremin">
-        <span class="project-number">04</span>
-        <h2>Pseudo-Theremin</h2>
-        <p>The project started as an exploration of non-contact instruments and to study how various users interact with them. With the help of accessible microcontrollers and open-source software, I was able to run advanced synthesis methods on SuperCollider on a Raspberry Pi. The player can alter sound by interacting with two time-of-flight sensors that read the distance of both hands. In the first prototype, an ESP32 reads the sensor input, and one hand controls the pitch while the other controls the volume of a skewed sine wave. The instrument is also capable of sending out MIDI CC values over USB.</p>
-        <p>The project is ongoing and explores different proximity sensors such as cameras, Light Dependent Resistors and Ultrasonic Sensors. The next prototype replaces the Raspberry Pi with an NVIDIA Jetson Orin Nano to enable ML-grade sensing and LLM-based synthesis like Realtime Audio Variational autoEncoder.</p>
-        <div class="links">
-          <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Theremin/Software/Tutorial" target="_blank">Tutorial ↗</a>
-          <a href="https://youtu.be/AiVtWftM1A4" target="_blank">Prototype 1 Video ↗</a>
-          <a href="https://youtu.be/kRsQ0UO5oFs" target="_blank">Prototype 2 Video ↗</a>
-          <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Theremin/Software" target="_blank">Software ↗</a>
-          <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Theremin/Hardware" target="_blank">Hardware ↗</a>
+    <div class="category">
+      <div class="cat-label">Spatial Audio</div>
+      <div class="cat-content">
+        <div class="nav-links">
+          <a href="projects/ambisonic.html">Brahma Ambisonic Microphones</a>
+          <a href="projects/spatial-audio.html">8-Channel Spatial Audio Composition</a>
         </div>
-        <p class="credit">Supervision: Yashas Shetty & Arun · Concept and ideation: Anant Rohmetra</p>
       </div>
-
-      <!-- 5 -->
-      <div class="project" id="synthesizer">
-        <span class="project-number">05</span>
-        <h2>Standalone Synthesizer</h2>
-        <p>This synthesizer is a standalone device which acts as a sound-operator, manipulator and sound reproduction with a specialised body interface. It runs the MOZZI sound synthesis library on the Arduino Uno to generate a triangle wave. An ultrasonic sensor controls pitch whereas a flex sensor introduces pitch modulation through chance operation when bent. This creates a system of controlled randomness, where the performer influences the range of random pitch.</p>
-        <p>The audio can be outputted through a built-in speaker and a headphones jack. The user can switch on the instrument and customize the existing Arduino code according to their specific needs using the USB type B port. The circuit was put in a 3D-printed case designed for the instrument.</p>
-        <div class="links">
-          <a href="https://youtu.be/KmuTKfXdc-A" target="_blank">Video Example ↗</a>
-        </div>
-        <p class="credit">Supervision: Yashas Shetty · Circuit, 3D-printing and programming: Renee Dua & Anant Rohmetra</p>
-      </div>
-
-      <!-- 6 -->
-      <div class="project" id="faust-esp32">
-        <span class="project-number">06</span>
-        <h2>Offloading Faust on ESP32 LyraT Mini v1.2</h2>
-        <p>This project began while exploring how to offload various sound libraries onto the LyraT Mini v1.2 board. Integrating Faust DSP was particularly challenging, as the official Faust repository currently supports only the WM8978 audio codec, while the LyraT Mini relies on the ES8311. To address this limitation, I wrote ES8311 codec support and adapted the faust2esp32 generated files to function seamlessly on the LyraT board.</p>
-        <p>The Faust-generated DSP code was adapted for the ESP32 LyraT Mini v1.2 by updating deprecated FreeRTOS APIs, increasing stack size, enabling PSRAM for large DSP structures, and enabling C++ exceptions. Additional fixes included resolving macro conflicts, adding correct I2S pin mappings, and updating the audio HAL to match recent ESP-ADF changes. The codebase was reorganized into ESP-IDF components, resulting in a working Faust DSP engine on the LyraT Mini.</p>
-        <div class="links">
-          <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Faust-%3EESP32-Lyra-t-mini-V-1.2" target="_blank">Codec, Audio & More ↗</a>
-        </div>
-        <p class="credit">Code: Anant Rohmetra</p>
-      </div>
-
-      <!-- 7 -->
-      <div class="project" id="ambisonic">
-        <span class="project-number">07</span>
-        <h2>Ambisonic A-Format to B-Format Converter</h2>
-        <p>The Indian Sonic Research Organisation builds 1st-order and 2nd-order Ambisonic microphones called Brahma. I have been involved in both the building and selling processes of these microphones. As a community activity, I organised recording trips to lakes across Bangalore, where the captured recordings are now being used for archival purposes and ecological study.</p>
-        <p>To make the recordings compatible with different loudspeaker setups, I wrote Python and HTML scripts that convert A-format (LF, RF, LB, RB) signals captured using 1st-order Brahma Ambisonic Microphones into B-format (W, X, Y, Z). Each B-format channel is generated using four impulse responses — one for each A-format capsule — resulting in a 4×4 matrix of FIR filters.</p>
-        <div class="links">
-          <a href="https://brahmamic.com/" target="_blank">Brahma Microphones ↗</a>
-          <a href="https://anantrohmetra.github.io/Brahma-Converter-GUI/" target="_blank">Online Converter ↗</a>
-          <a href="https://drive.proton.me/urls/7B420ZTR9C#G6bFIbrc5My3" target="_blank">Python & HTML Code ↗</a>
-          <a href="https://on.soundcloud.com/lHmMoCTOyktwuo7wE9" target="_blank">Binaural Audio ↗</a>
-          <a href="https://drive.proton.me/urls/2608NJ68X4#vbkAMwesTL0N" target="_blank">Audio Files ↗</a>
-        </div>
-        <p class="credit">Supervision: Ummashankar Mantravadi & Yashas Shetty · Code and recordist: Anant Rohmetra</p>
-      </div>
-
-      <!-- 8 -->
-      <div class="project" id="blogs">
-        <span class="project-number">08</span>
-        <h2>Blogs</h2>
-        <p>Much of the existing literature on the history of electronic musical interfaces is by Western scholars. But coming from a tier-2 city in India, I have often found this literature distant and disconnected from how I see things. This prompted me to approach the subject from my perspective and write a series of blog posts aimed at spreading awareness in South Asia, targeting academics, researchers, students, and technology enthusiasts.</p>
-        <p>This four-part blog series begins with three posts that trace the history of electronic interfaces for musical expression across the periods 1753–1915, 1915–1950, and 1950 onwards. The three historical blogs are followed by an overview of present-day electronic music tools, exploring how music-making, distribution, and streaming practices have evolved.</p>
-        <div class="links">
-          <a href="https://www.theisro.org/post/electronic-music-interfaces-today" target="_blank">In the Year 2025 ↗</a>
-          <a href="https://www.theisro.org/post/electronic-instruments-for-musical-expression-part-1-1750-1915" target="_blank">Part 1: 1750–1915 ↗</a>
-          <a href="https://www.theisro.org/post/electronic-interfaces-for-musical-expression-part-2-1915-1950" target="_blank">Part 2: 1915–1950 ↗</a>
-          <a href="https://www.theisro.org/post/electronic-instruments-for-musical-expression-part-3-1950-onwards" target="_blank">Part 3: 1950 Onwards ↗</a>
-        </div>
-        <p class="credit">Supervision: Yashas Shetty · Writer: Anant Rohmetra</p>
-      </div>
-
-      <!-- 9 -->
-      <div class="project" id="detroit-techno">
-        <span class="project-number">09</span>
-        <h2>Deep Learning Model to Make Detroit Techno</h2>
-        <p>This project focuses on developing a specialised deep learning model capable of generating techno music inspired by classic Detroit techno. Using Dance Diffusion by Zach Evans as the foundation, the model was fine-tuned on a curated dataset drawn from Detroit's 1980s and 1990s techno. At its current stage, the model generates short audio clips of around 7–11 seconds, with the aim to generate 16 and 32 bar loops in the next stage.</p>
-        <div class="links">
-          <a href="https://drive.proton.me/urls/F25AA25F0G#cXPZUq6xkLwP" target="_blank">Generated Audio ↗</a>
-          <a href="https://drive.proton.me/urls/VKJDNY88T8#gzWSC8dqFArL" target="_blank">Model & Weights ↗</a>
-        </div>
-        <p class="credit">Base model: Dance Diffusion · Fine-tuning: Anant Rohmetra</p>
-      </div>
-
-      <!-- 10 -->
-      <div class="project" id="mayaflux">
-        <span class="project-number">10</span>
-        <h2>MayaFlux Development</h2>
-        <p>MayaFlux's computational substrate makes new kinds of real-time multimedia systems possible by posing a fundamental question: What if audio, visuals, and control data all shared the same processing paradigm instead of existing as separate, disconnected domains?</p>
-        <p>As an early developer and user of the project, I have contributed both artistically and technically. As a composer, I helped identify bugs and breakpoints through practical testing. As a developer, I have worked on logging cleanup, context tagging, code modernization, and contributed algorithmic and conceptual proposals.</p>
-        <div class="links">
-          <a href="https://github.com/MayaFlux/MayaFlux/tree/main" target="_blank">GitHub Repository ↗</a>
-        </div>
-        <p class="credit">Supervision: Ranjeet Hegde · Programming and composition: Anant Rohmetra</p>
-      </div>
-
     </div>
-  </section>
 
-  <footer>
-    <div class="container">
-      <p>Anant Rohmetra · 2025</p>
+    <div class="category">
+      <div class="cat-label">Text</div>
+      <div class="cat-content">
+        <div class="nav-links">
+          <a href="projects/blogs.html">Blogs: Historic overview of Electronic Music Interfaces</a>
+          <a href="projects/sonic-interaction.html">Sonic Feedback During Container Filling</a>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <div class="category">
+      <div class="cat-label">Others</div>
+      <div class="cat-content">
+        <div class="nav-links">
+          <a href="projects/faust-esp32.html">Offloading Faust on ESP32 LyraT Mini v1.2</a>
+          <a href="projects/detroit-techno.html">Deep Learning Model to Generate Techno</a>
+          <a href="projects/mayaflux.html">MayaFlux (c++ library)</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /* ── Boids background per column ── */
+    const MAX_SPEED = 0.5;
+    const MAX_FORCE = 0.016;
+    const SEP_DIST  = 50;
+
+    function initBoids(container) {
+      const canvas = document.createElement('canvas');
+      canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+      container.prepend(canvas);
+
+      const ctx = canvas.getContext('2d');
+      let W = 0, H = 0;
+
+      function resize() {
+        W = canvas.width  = container.offsetWidth;
+        H = canvas.height = container.offsetHeight;
+      }
+      resize();
+      new ResizeObserver(resize).observe(container);
+
+      const N = 4 + Math.floor(Math.random() * 3);
+
+      class Boid {
+        constructor() {
+          this.x = Math.random() * W;
+          this.y = Math.random() * H;
+          this.wanderAngle = Math.random() * Math.PI * 2;
+          this.vx = Math.cos(this.wanderAngle) * (0.2 + Math.random() * 0.25);
+          this.vy = Math.sin(this.wanderAngle) * (0.2 + Math.random() * 0.25);
+          this.ax = 0; this.ay = 0;
+        }
+
+        steer(dx, dy) {
+          const m = Math.hypot(dx, dy);
+          if (m === 0) return { x: 0, y: 0 };
+          const nx = dx / m * MAX_SPEED - this.vx;
+          const ny = dy / m * MAX_SPEED - this.vy;
+          const fm = Math.hypot(nx, ny);
+          if (fm > MAX_FORCE) return { x: nx / fm * MAX_FORCE, y: ny / fm * MAX_FORCE };
+          return { x: nx, y: ny };
+        }
+
+        update(boids) {
+          this.wanderAngle += (Math.random() - 0.5) * 0.05;
+          this.ax += Math.cos(this.wanderAngle) * 0.006;
+          this.ay += Math.sin(this.wanderAngle) * 0.006;
+
+          for (const o of boids) {
+            if (o === this) continue;
+            const dx = o.x - this.x, dy = o.y - this.y;
+            const d = Math.hypot(dx, dy);
+            if (d < SEP_DIST && d > 0) {
+              const f = this.steer(-dx / d, -dy / d);
+              this.ax += f.x * 1.8;
+              this.ay += f.y * 1.8;
+            }
+          }
+
+          this.vx += this.ax; this.vy += this.ay;
+          const spd = Math.hypot(this.vx, this.vy);
+          if (spd > MAX_SPEED) { this.vx = this.vx/spd*MAX_SPEED; this.vy = this.vy/spd*MAX_SPEED; }
+          if (spd < 0.12)      { this.vx = this.vx/spd*0.12;      this.vy = this.vy/spd*0.12; }
+
+          this.x += this.vx; this.y += this.vy;
+          this.ax = 0; this.ay = 0;
+        }
+
+        edges() {
+          if (this.x < 0) this.x = W;
+          if (this.x > W) this.x = 0;
+          if (this.y < 0) this.y = H;
+          if (this.y > H) this.y = 0;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, 2.2, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(17,17,17,0.85)';
+          ctx.fill();
+        }
+      }
+
+      const boids = Array.from({ length: N }, () => new Boid());
+
+      (function loop() {
+        ctx.clearRect(0, 0, W, H);
+        boids.forEach(b => { b.update(boids); b.edges(); b.draw(); });
+        requestAnimationFrame(loop);
+      })();
+    }
+
+    document.querySelectorAll('.category').forEach(initBoids);
+
+  </script>
 
 </body>
 </html>

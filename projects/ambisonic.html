@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brahma Ambisonic Microphones — Anant Rohmetra</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="page-header">
+      <a href="spatial.html" class="back-link">&larr; Spatial Audio</a>
+      <div class="project-meta">Research &amp; Development</div>
+      <h1 class="project-title">Brahma Ambisonic Microphones</h1>
+    </div>
+
+    <div class="project-body">
+      <p>The Indian Sonic Research Organisation builds 1st-order and 2nd-order Ambisonic microphones called Brahma. I have been involved in both the building and use of these microphones &mdash; assembling arrays, calibrating against reference microphones, and conducting field recording trips to lakes across Bangalore for archival and ecological study.</p>
+
+      <div class="subsection">
+        <div class="subsection-heading">Assembling Brahma Field 4</div>
+        <p>The project began with 3D printing the tetrahedral array to build a first-order Ambisonic microphone. 14mm capsules were mounted on the array and connected to a 12-pin DIN XLR connector using a simple P48 phantom power circuit.</p>
+        <div class="gallery">
+          <img src="../media/Field-4.jpg" alt="Brahma Field 4 tetrahedral array">
+          <img src="../media/Field-4-2.jpg" alt="Brahma Field 4 assembly">
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-heading">ZoomxBrahma</div>
+        <p>The assembled microphone was calibrated against an Earthworks reference microphone to characterise the capsule responses across the array. The calibration process is documented below.</p>
+        <div class="gallery">
+          <img src="../media/Brahma-in-Zoom.jpg" alt="Brahma microphone in Zoom recorder">
+          <img src="../media/Brahma-in-Zoom-2.jpg" alt="Brahma microphone setup">
+        </div>
+        <div class="video-wrap" style="max-width: 408px;">
+          <video controls preload="none" poster="../media/thumb-calibration.jpg">
+            <source src="../media/Caliberation.mov" type="video/quicktime">
+            <source src="../media/Caliberation.mov" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-heading">A-Format to B-Format Conversion</div>
+        <p>To make recordings compatible with different loudspeaker setups, I wrote Python and HTML scripts that convert A-format (FLU, FRD, BLD, BRU) signals captured using 1st-order Brahma Ambisonic Microphones into B-format (W, X, Y, Z). Each B-format channel is generated using four impulse responses &mdash; one for each A-format capsule &mdash; resulting in a 4&times;4 matrix of FIR filters.</p>
+      </div>
+
+      <div class="links">
+        <a href="https://brahmamic.com/" target="_blank">Brahma Microphones &uarr;</a>
+        <a href="https://anantrohmetra.github.io/Brahma-Converter-GUI/" target="_blank">Online Converter &uarr;</a>
+        <a href="https://drive.proton.me/urls/7B420ZTR9C#G6bFIbrc5My3" target="_blank">Python &amp; HTML Code &uarr;</a>
+        <a href="https://on.soundcloud.com/lHmMoCTOyktwuo7wE9" target="_blank">Binaural Audio &uarr;</a>
+        <a href="https://drive.proton.me/urls/2608NJ68X4#vbkAMwesTL0N" target="_blank">Audio Files &uarr;</a>
+      </div>
+
+      <p class="credit">Supervision: Meena Mantravadi, Umashankar Mantravadi &amp; Yashas Shetty &middot; Assembly, calibration and code: Anant Rohmetra</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <a href="spatial.html" class="back-link">&larr; Back</a>
+    </div>
+  </footer>
+
+</body>
+</html>

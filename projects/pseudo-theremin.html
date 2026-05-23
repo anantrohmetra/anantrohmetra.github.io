@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-Theremin — Anant Rohmetra</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="page-header">
+      <a href="../index.html" class="back-link">&larr; Anant Rohmetra</a>
+      <div class="project-meta">Research &amp; Development &mdash; 04</div>
+      <h1 class="project-title">Pseudo-Theremin</h1>
+    </div>
+
+    <div class="project-body">
+      <p>The project started as an exploration of non-contact instruments and to study how various users interact with them. With the help of accessible microcontrollers and open-source software, I was able to run advanced synthesis methods on SuperCollider on a Raspberry Pi. The player can alter sound by interacting with two time-of-flight sensors that read the distance of both hands. In the first prototype, an ESP32 reads the sensor input, and one hand controls the pitch while the other controls the volume of a skewed sine wave. The instrument is also capable of sending out MIDI CC values over USB.</p>
+      <p>The project is ongoing and explores different proximity sensors such as cameras, Light Dependent Resistors and Ultrasonic Sensors. The next prototype replaces the Raspberry Pi with an NVIDIA Jetson Orin Nano to enable ML-grade sensing and LLM-based synthesis like Realtime Audio Variational autoEncoder.</p>
+
+      <div class="video-wrap">
+        <video controls preload="none" poster="../media/thumb-theremin.jpg">
+          <source src="../media/theremin.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="links">
+        <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Theremin/Software/Tutorial" target="_blank">Tutorial &uarr;</a>
+        <a href="https://youtu.be/AiVtWftM1A4" target="_blank">Prototype 1 Video &uarr;</a>
+        <a href="https://youtu.be/kRsQ0UO5oFs" target="_blank">Prototype 2 Video &uarr;</a>
+        <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Theremin/Software" target="_blank">Software &uarr;</a>
+        <a href="https://github.com/anantrohmetra/Portfolio/tree/main/Theremin/Hardware" target="_blank">Hardware &uarr;</a>
+      </div>
+
+      <p class="credit">Supervision: Yashas Shetty &amp; Arun &middot; Concept and ideation: Anant Rohmetra</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <a href="../index.html" class="back-link">&larr; Back</a>
+    </div>
+  </footer>
+
+</body>
+</html>

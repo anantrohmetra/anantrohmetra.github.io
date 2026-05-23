@@ -1,0 +1,215 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+  background: #f2efea;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+a { color: #111; text-decoration: underline; }
+a:hover { color: #555; }
+
+/* ── Header (landing) ─────────────────────────── */
+header {
+  padding: 44px 0 28px;
+}
+
+.header-content {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.header-text { flex: 1; }
+
+.header-image {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+header p {
+  font-size: 0.88rem;
+  color: #222;
+  max-width: 560px;
+}
+
+/* ── Categorized project nav (landing) ─────────── */
+.project-nav {
+  padding: 48px 0 72px;
+}
+
+.nav-category {
+  margin-bottom: 36px;
+}
+
+.nav-category-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #444;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-bottom: 14px;
+}
+
+.nav-sub {
+  margin-bottom: 16px;
+}
+
+.nav-sub-label {
+  font-size: 0.68rem;
+  color: #666;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+  padding-left: 18px;
+}
+
+.nav-category > .nav-links {
+  padding-left: 0;
+}
+
+.nav-sub > .nav-links {
+  padding-left: 36px;
+}
+
+.nav-links a {
+  display: block;
+  font-size: 0.9rem;
+  color: #111;
+  text-decoration: none;
+  line-height: 1.65;
+}
+
+.nav-links a:hover { text-decoration: underline; }
+
+/* ── Project detail pages ─────────────────────── */
+.page-header {
+  padding: 28px 0 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.back-link {
+  font-size: 0.8rem;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+.back-link:hover { color: #111; text-decoration: underline; }
+
+.project-meta {
+  font-size: 0.72rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.project-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.project-body {
+  padding: 32px 0;
+}
+
+.project-body p {
+  font-size: 0.88rem;
+  color: #222;
+  margin-bottom: 14px;
+  max-width: 680px;
+}
+
+.links {
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.links a {
+  font-size: 0.82rem;
+  margin-right: 20px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.credit {
+  font-size: 0.76rem;
+  color: #444;
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* ── Video ────────────────────────────────────── */
+.video-wrap {
+  margin-top: 20px;
+  max-width: 680px;
+}
+
+.video-wrap video {
+  width: 100%;
+  display: block;
+}
+
+.video-label {
+  font-size: 0.72rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* ── Subsection ───────────────────────────────── */
+.subsection {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e0dbd4;
+}
+
+.subsection-heading {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* ── Gallery ──────────────────────────────────── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 24px;
+  max-width: 640px;
+}
+
+.gallery img { width: 100%; display: block; }
+
+/* ── Footer ───────────────────────────────────── */
+footer {
+  border-top: 1px solid #666;
+  padding: 18px 0;
+  font-size: 0.76rem;
+  color: #444;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+  .header-content { flex-direction: column; gap: 20px; }
+  .header-image { width: 110px; }
+  .gallery { grid-template-columns: 1fr; }
+}
