@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dattorro Plate Reverb — Anant Rohmetra</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="page-header">
+      <a href="../portfolio.html" class="back-link">&larr; Anant Rohmetra</a>
+      <div class="project-meta">Research &amp; Development &mdash; 12</div>
+      <h1 class="project-title">Dattorro Plate Reverb (Pure Data Patch)</h1>
+    </div>
+
+    <div class="project-body">
+      <p>A Pure Data implementation of Jon Dattorro's plate reverb algorithm, built as part of an exploration into how digital reverberation creates a perceived sense of acoustic space.</p>
+
+      <blockquote>Do spaces exist inside or outside our head? How do we get a sense of space using digital reverb?</blockquote>
+
+      <h3>About the Algorithm</h3>
+      <p>The Dattorro reverb is a classic plate-style artificial reverb described in Jon Dattorro's 1997 paper. It models the acoustic behaviour of a vibrating metal plate using:</p>
+
+      <ul>
+        <li><strong>Input diffusion</strong> — four all-pass filters that smear the transient attack of the input signal</li>
+        <li><strong>Decay tank</strong> — two coupled feedback delay lines with modulated all-pass filters, creating a dense, evolving tail</li>
+        <li><strong>Modulation</strong> — two LFOs slightly detune the all-pass delays, adding shimmer and preventing metallic resonances</li>
+      </ul>
+
+      <p>See history.md for the full lineage from Schroeder (1962) through the hardware era to Dattorro (1997).</p>
+
+      <div class="links">
+        <a href="https://github.com/anantrohmetra/Dattorro-reverb-pd" target="_blank">Repository &uarr;</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <a href="../portfolio.html" class="back-link">&larr; Back</a>
+    </div>
+  </footer>
+
+</body>
+</html>
