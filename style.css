@@ -38,6 +38,7 @@ header {
 /* Full-width "Selected Projects" ticker between the header and categories */
 .ticker-band {
   display: block;
+  flex-shrink: 0;
   color: #111;
   text-decoration: none;
   overflow: hidden;
