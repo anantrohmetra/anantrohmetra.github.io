@@ -14,6 +14,8 @@ download (1).png
 
 # Personal documents in media/
 media/*.pdf
+!media/Anant_Rohmetra_task2.pdf
+!media/Learning-Diary.pdf
 media/*.docx
 media/*.HEIC
 media/*.MOV

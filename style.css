@@ -194,6 +194,7 @@ header p {
 /* ── Video ────────────────────────────────────── */
 .video-wrap {
   margin-top: 20px;
+  margin-bottom: 28px;
   max-width: 680px;
   position: relative;
   width: 100%;
@@ -227,30 +228,30 @@ header p {
   background: transparent;
 }
 
-/* Centre a video under the 680px text column (not the full container) */
+/* Videos and images are left-aligned with the text column */
 .video-wrap.text-centered {
   max-width: 420px;
-  margin-left: calc((680px - 420px) / 2);
+  margin-left: 0;
   margin-right: auto;
 }
 
-/* Centre an image under the 680px text column */
+/* Images are left-aligned with the text column */
 .img-centered {
   max-width: 420px;
   width: 100%;
   display: block;
   margin-top: 20px;
-  margin-left: calc((680px - 420px) / 2);
+  margin-left: 0;
 }
 
 @media (max-width: 700px) {
   .img-centered { margin-left: 0; max-width: 100%; }
 }
 
-/* Portrait 720x1280 video sized to the same 315px height as a 420px-wide 4:3 image, centred on the same axis */
+/* Portrait video sized to the same 315px height as a 420px-wide 4:3 image */
 .video-wrap.same-height-315 {
   max-width: 266px;
-  margin-left: calc((680px - 266px) / 2);
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -261,7 +262,7 @@ header p {
 /* Portrait video sized to the same height as a 420px-wide 612x640 video (~439px) */
 .video-wrap.text-centered.portrait-match {
   max-width: 269px;
-  margin-left: calc((680px - 269px) / 2);
+  margin-left: 0;
 }
 
 .video-label {

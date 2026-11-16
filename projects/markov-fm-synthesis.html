@@ -11,8 +11,8 @@
   <div class="container">
 
     <div class="page-header">
-      <a href="../index.html" class="back-link">&larr; Anant Rohmetra</a>
-      <div class="project-meta">Compositions &mdash; 05</div>
+      <a href="../index.html" class="back-link">&larr; Home</a>
+      <div class="project-meta">Composition</div>
       <h1 class="project-title">Markov</h1>
     </div>
 
@@ -26,13 +26,13 @@
 
       <p>The project started with an eagerness to learn about Markov chains and implement them in Python. I began by writing a Markov chain (python-markov-chain/other-files/raw-markov-chain.py) using only the standard random library. After doing so, I learned that if I run a Markov chain long enough, the probability of each event reaches a constant value. This is the equilibrium (stationary) state, which is always the same regardless of the initial state, given the transition matrix remains the same</p>
 
-      <div class="gallery">
+      <div class="gallery" style="margin-bottom:28px;">
         <img src="../media/learning-diary-000.png" alt="Equilibrium Distribution in Markov Chain">
       </div>
 
       <p>After this, I rewrote the Markov chain using NumPy and SciPy in the markov.py file. This version allows me to work with any number of states, uses the multinomial function in place of manual random thresholding, and makes the implementation cleaner and easier to work with. The markov chain also allows me to make drawing (Fig. 3), which has possible outcomes [0, 1, 2].</p>
 
-      <div class="gallery">
+      <div class="gallery" style="margin-bottom:28px;">
         <img src="../media/learning-diary-001.png" alt="Markov Chain with outcomes [0, 1, 2]">
       </div>
 
@@ -44,7 +44,7 @@
 
       <p>I wanted to implement visuals in Pure Data using the GEM library, which allowed me to open a window to render visuals, import objects and light sources, and manipulate them. I used the torus object (a "doughnut"), with translate object to position torus and rotate to turn it. I made four clones of the same chain of object to get multiple torus' on screen. The world_light object introduced a 3D feel by throwing light on all torus. The parameters of the rotate and translate objects were triggered by Markov chains (Fig. 3).</p>
 
-      <div class="gallery">
+      <div class="gallery" style="margin-bottom:28px;">
         <img src="../media/learning-diary-003.png" alt="GEM Visualization with Torus">
       </div>
 
