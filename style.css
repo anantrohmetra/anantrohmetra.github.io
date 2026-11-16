@@ -35,6 +35,41 @@ header {
   flex-shrink: 0;
 }
 
+/* Full-width "Selected Projects" ticker between the header and categories */
+.ticker-band {
+  display: block;
+  color: #111;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding: 4px 0 14px;
+  border-bottom: 1px solid #111;
+}
+
+.ticker-text {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #111;
+  letter-spacing: 1.5px;
+  animation: ticker-slide 44s linear infinite;
+}
+
+.ticker-item {
+  margin-right: 15rem;
+}
+
+@keyframes ticker-slide {
+  from { transform: translateX(100vw); }
+  to { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-text { animation: none; transform: none; }
+}
+
 h1 {
   font-size: 1.05rem;
   font-weight: bold;
@@ -176,6 +211,58 @@ header p {
   display: block;
 }
 
+/* Local videos keep their own aspect ratio, so no black side bars */
+.video-wrap:has(video) {
+  padding-bottom: 0;
+  height: auto;
+  overflow: visible;
+  background: none;
+}
+
+.video-wrap video {
+  position: relative;
+  height: auto;
+  border-radius: 6px;
+  background: transparent;
+}
+
+/* Centre a video under the 680px text column (not the full container) */
+.video-wrap.text-centered {
+  max-width: 420px;
+  margin-left: calc((680px - 420px) / 2);
+  margin-right: auto;
+}
+
+/* Centre an image under the 680px text column */
+.img-centered {
+  max-width: 420px;
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  margin-left: calc((680px - 420px) / 2);
+}
+
+@media (max-width: 700px) {
+  .img-centered { margin-left: 0; max-width: 100%; }
+}
+
+/* Portrait 720x1280 video sized to the same 315px height as a 420px-wide 4:3 image, centred on the same axis */
+.video-wrap.same-height-315 {
+  max-width: 266px;
+  margin-left: calc((680px - 266px) / 2);
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .video-wrap.same-height-315 { margin-left: 0; max-width: 100%; }
+}
+
+/* Portrait video sized to the same height as a 420px-wide 612x640 video (~439px) */
+.video-wrap.text-centered.portrait-match {
+  max-width: 269px;
+  margin-left: calc((680px - 269px) / 2);
+}
+
 .video-label {
   font-size: 0.72rem;
   color: #555;
@@ -230,6 +317,8 @@ footer {
   .project-body p { font-size: 0.86rem; max-width: 100%; }
 
   .video-wrap { max-width: 100% !important; }
+  .video-wrap.text-centered,
+  .video-wrap.text-centered.portrait-match { max-width: 100%; margin-left: 0; }
 
   .subsection { margin-top: 20px; padding-top: 16px; }
 
